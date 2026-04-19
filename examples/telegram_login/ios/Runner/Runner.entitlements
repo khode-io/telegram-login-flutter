@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC '-//Apple//DTD PLIST 1.0//EN' 'http://www.apple.com/DTDs/PropertyList-1.0.dtd'>
+<plist version='1.0'>
+<dict>
+	<!-- Associated Domains for Telegram Login Universal Links.
+	     The `?mode=developer` suffix forces iOS to bypass Apple's CDN and
+	     fetch the AASA file directly from the domain on every launch. This
+	     is required during development because iOS caches the universal-
+	     link decision per-device, and any stale "not associated" result
+	     would keep the callback opening in Safari instead of the app.
+	     Requirement: on the iPhone, turn ON
+	       Settings → Developer → Associated Domains Development.
+	     For production builds, remove `?mode=developer`. -->
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:app2142222789-login.tg.dev?mode=developer</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "telegram-login-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TelegramMessenger/telegram-login-ios",
+      "state" : {
+        "revision" : "f45a597b20956c36b71ea60b8886aff2ee16be84",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

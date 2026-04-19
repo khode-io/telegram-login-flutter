@@ -1,0 +1,43 @@
+---
+title: Telegram Login Flutter
+description: A Flutter plugin that wraps the official Telegram Login SDK for signing users in with their Telegram account.
+template: splash
+hero:
+  tagline: Native OAuth flow powered by the official Telegram SDKs for iOS and Android.
+  actions:
+    - text: Get Started
+      link: /getting-started/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/khode-io/telegram-login-flutter
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## Features
+
+<CardGrid stagger>
+  <Card title="Native SDK" icon="rocket">
+    Uses the official Telegram Login SDK for iOS and Android with native OAuth
+    flow.
+  </Card>
+  <Card title="Universal Links" icon="link">
+    Supports iOS Universal Links (iOS 17.4+) and App Links on Android.
+  </Card>
+  <Card title="Easy Integration" icon="setting">
+    Automatic URL callback forwarding — no AppDelegate or Activity wiring
+    required.
+  </Card>
+  <Card title="Cancellation" icon="close">
+    Cancel in-flight login attempts with `cancelLogin()`.
+  </Card>
+</CardGrid>
+
+## Supported Platforms
+
+| Platform | SDK Source                                                                                              |
+| -------- | ------------------------------------------------------------------------------------------------------- |
+| iOS      | [TelegramMessenger/telegram-login-ios](https://github.com/TelegramMessenger/telegram-login-ios)         |
+| Android  | [TelegramMessenger/telegram-login-android](https://github.com/TelegramMessenger/telegram-login-android) |
