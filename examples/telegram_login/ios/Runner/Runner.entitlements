@@ -2,18 +2,23 @@
 <!DOCTYPE plist PUBLIC '-//Apple//DTD PLIST 1.0//EN' 'http://www.apple.com/DTDs/PropertyList-1.0.dtd'>
 <plist version='1.0'>
 <dict>
-	<!-- Associated Domains for Telegram Login Universal Links.
-	     The `?mode=developer` suffix forces iOS to bypass Apple's CDN and
-	     fetch the AASA file directly from the domain on every launch. This
-	     is required during development because iOS caches the universal-
-	     link decision per-device, and any stale "not associated" result
-	     would keep the callback opening in Safari instead of the app.
-	     Requirement: on the iPhone, turn ON
-	       Settings → Developer → Associated Domains Development.
-	     For production builds, remove `?mode=developer`. -->
+	<!-- Associated Domains for Telegram Login.
+	     - `applinks:` is required so the HTTPS callback URL returned from the
+	       authorization server opens the app via Universal Links.
+	     - `webcredentials:` is required because ASWebAuthenticationSession's
+	       HTTPS callback mode (iOS 17.4+) explicitly refuses to run unless the
+	       app is associated with the callback host via the `webcredentials`
+	       service type. Without it, the session fails with:
+	         "Using HTTPS callbacks requires Associated Domains using the
+	          `webcredentials` service type for <host>."
+	     - During development you can append `?mode=developer` to each entry
+	       to force iOS to bypass Apple's CDN and re-fetch the AASA file on
+	       every launch (requires enabling Settings → Developer → Associated
+	       Domains Development on the device). -->
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:app2142222789-login.tg.dev?mode=developer</string>
+		<string>applinks:app2142222789-login.tg.dev</string>
+		<string>webcredentials:app2142222789-login.tg.dev</string>
 	</array>
 </dict>
 </plist>

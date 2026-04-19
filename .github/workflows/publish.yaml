@@ -1,0 +1,41 @@
+name: Publish to pub.dev
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.7"
+          channel: "stable"
+      - run: flutter pub get
+        working-directory: packages/telegram_login
+      - run: flutter analyze
+        working-directory: packages/telegram_login
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.7"
+          channel: "stable"
+      - run: flutter pub get
+        working-directory: packages/telegram_login
+      - run: flutter test
+        working-directory: packages/telegram_login
+
+  publish:
+    needs: [analyze, test]
+    permissions:
+      id-token: write
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    with:
+      working-directory: packages/telegram_login

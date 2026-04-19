@@ -62,8 +62,17 @@ Pick **one** of the two URL delivery mechanisms.
 
 1. In Xcode, select your app target → **Signing & Capabilities**
 2. Click **+ Capability** → **Associated Domains**
-3. Add: `applinks:app{YOUR_CLIENT_ID}-login.tg.dev`
-4. For development builds, append `?mode=developer` to the entry.
+3. Add **both** entries for your login domain:
+   - `applinks:app{YOUR_CLIENT_ID}-login.tg.dev`
+   - `webcredentials:app{YOUR_CLIENT_ID}-login.tg.dev`
+4. For development builds, you may append `?mode=developer` to each entry.
+
+> **Why `webcredentials:` is required.** iOS 17.4+ refuses HTTPS callbacks in
+> `ASWebAuthenticationSession` unless the app is associated with the callback
+> host via the `webcredentials` service type. Without it, the session fails
+> instantly with _"Using HTTPS callbacks requires Associated Domains using the
+> `webcredentials` service type for `<host>`"_ and the user sees a cancelled
+> login.
 
 Use the `https://` URL as your `redirectUri`:
 

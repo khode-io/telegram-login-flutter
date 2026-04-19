@@ -47,8 +47,19 @@ Pick **one** of the two URL delivery mechanisms.
 
 1. In Xcode, select your app target → **Signing & Capabilities**
 2. Click **+ Capability** → **Associated Domains**
-3. Add: `applinks:app{YOUR_CLIENT_ID}-login.tg.dev`
-4. For development builds, append `?mode=developer` to the entry.
+3. Add **both** entries for your login domain:
+   - `applinks:app{YOUR_CLIENT_ID}-login.tg.dev`
+   - `webcredentials:app{YOUR_CLIENT_ID}-login.tg.dev`
+4. For development builds, you may append `?mode=developer` to each entry.
+
+> **Why `webcredentials:` is required.** On iOS 17.4 and newer,
+> `ASWebAuthenticationSession` (used internally by the Telegram Login SDK)
+> refuses to open an HTTPS callback unless the app is associated with the
+> callback host via the `webcredentials` service type. If you add only
+> `applinks:`, the session will immediately fail with
+> `SFAuthenticationSession was cancelled by user` and the log will contain:
+> _"Using HTTPS callbacks requires Associated Domains using the
+> `webcredentials` service type for `<host>`."_
 
 Use the `https://` URL as your `redirectUri`:
 
