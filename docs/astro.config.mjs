@@ -4,6 +4,8 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://khode-io.github.io",
+  base: "/telegram-login-flutter",
   integrations: [
     starlight({
       title: "Telegram Login Flutter",

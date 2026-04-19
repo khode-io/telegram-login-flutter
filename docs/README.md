@@ -1,49 +1,49 @@
-# Starlight Starter Kit: Basics
+# Telegram Login Documentation
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
-
-```
-npm create astro@latest -- --template starlight
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Documentation site for the Telegram Login Flutter plugin, built with [Starlight](https://starlight.astro.build/) and [Astro](https://astro.build).
 
 ## 🚀 Project Structure
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
 ```
 .
-├── public/
+├── public/               # Static assets
 ├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
+│   ├── assets/          # Images and other assets
+│   ├── content/         # Documentation content
+│   │   └── docs/        # Markdown/MDX docs
 │   └── content.config.ts
-├── astro.config.mjs
+├── astro.config.mjs     # Astro configuration
 ├── package.json
 └── tsconfig.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command           | Action                                      |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Installs dependencies                       |
+| `npm run dev`     | Starts local dev server at `localhost:4321` |
+| `npm run build`   | Build production site to `./dist/`          |
+| `npm run preview` | Preview build locally                       |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🌐 Deployment
 
-## 👀 Want to learn more?
+The documentation is automatically deployed to **GitHub Pages** when changes are pushed to the `main` or `master` branch.
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- **Live URL:** https://khode-io.github.io/telegram-login-flutter
+- **Workflow:** [`.github/workflows/deploy-docs.yaml`](../.github/workflows/deploy-docs.yaml)
+
+### Manual Deployment
+
+To trigger a manual deployment, go to **Actions → Deploy Docs to GitHub Pages** and click **Run workflow**.
+
+## 📝 Adding Documentation
+
+1. Add `.md` or `.mdx` files to `src/content/docs/`
+2. Each file becomes a route based on its filename
+3. Update `astro.config.mjs` to add pages to the sidebar
+
+## 📚 Resources
+
+- [Starlight Docs](https://starlight.astro.build/)
+- [Astro Docs](https://docs.astro.build)
