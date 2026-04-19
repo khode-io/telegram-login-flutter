@@ -13,7 +13,7 @@ Thank you for your interest in contributing to Telegram Login! We welcome contri
 ### Prerequisites
 
 - Flutter SDK >=3.3.0
-- Dart SDK ^3.11.1
+- Dart SDK ^3.6.0
 - Android SDK (for Android development)
 - Xcode 15+ (for iOS development)
 

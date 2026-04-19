@@ -20,7 +20,7 @@ API for signing users in with their Telegram account.
 
 - **iOS:** 15.0 or newer, Xcode 15 or newer
 - **Android:** API 21+ (Android 5.0+)
-- Flutter `>=3.3.0`, Dart SDK `^3.11.1`
+- Flutter `>=3.3.0`, Dart SDK `^3.6.0`
 - A registered Telegram bot via [@BotFather](https://t.me/botfather)
 
 ## Installation
@@ -29,7 +29,7 @@ Add the package to your app's `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  telegram_login: ^0.0.1
+  telegram_login: ^1.0.0
 ```
 
 Then run `flutter pub get`.

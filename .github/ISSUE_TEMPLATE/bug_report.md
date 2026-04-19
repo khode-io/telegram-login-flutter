@@ -28,7 +28,7 @@ If applicable, add screenshots to help explain your problem.
 
 - OS: [e.g. iOS, Android]
 - Flutter version: [e.g. 3.24.0]
-- Package version: [e.g. 0.0.1]
+- Package version: [e.g. 1.0.0]
 
 **Additional Context**
 
