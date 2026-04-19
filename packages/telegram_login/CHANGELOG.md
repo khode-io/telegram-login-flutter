@@ -1,6 +1,6 @@
-## 0.0.1
+## 1.0.0
 
-- Initial release of telegram_login_flutter.
+- Initial stable release of telegram_login.
 - **Features:**
   - Native OAuth flow powered by the official Telegram Login SDK
   - iOS support with Universal Links (iOS 17.4+) and Custom URL Schemes (fallback)
@@ -9,8 +9,9 @@
   - User-driven cancellation with `cancelLogin()`
   - Comprehensive error handling with `TelegramLoginError`
 - **API:**
-  - `TelegramLoginFlutter.configure()` - Configure the SDK with client ID, redirect URI, and scopes
-  - `TelegramLoginFlutter.login()` - Start the login flow, returns JWT ID token
-  - `TelegramLoginFlutter.cancelLogin()` - Cancel an in-flight login
-  - `TelegramLoginFlutter.handleUrl()` - Manual URL forwarding for custom deep link handlers
-  - `TelegramLoginFlutter.isConfigured` - Check if SDK is configured
+  - `TelegramLogin.configure()` - Configure the SDK with client ID, redirect URI, and scopes
+  - `TelegramLogin.login()` - Start the login flow, returns JWT ID token
+  - `TelegramLogin.cancelLogin()` - Cancel an in-flight login
+  - `TelegramLogin.handleUrl()` - Manual URL forwarding for custom deep link handlers
+  - `TelegramLogin.isConfigured` - Check if SDK is configured
+

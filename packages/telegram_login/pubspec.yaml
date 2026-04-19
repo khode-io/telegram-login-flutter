@@ -1,10 +1,10 @@
 name: telegram_login
 description: "Telegram Login SDK for Flutter"
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/khode-io/telegram-login-flutter
 
 environment:
-  sdk: ^3.11.1
+  sdk: ^3.6.0
   flutter: ">=3.3.0"
 
 dependencies:
