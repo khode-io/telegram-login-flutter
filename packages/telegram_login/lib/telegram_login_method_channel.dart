@@ -7,7 +7,7 @@ import 'telegram_login_platform_interface.dart';
 /// Method channel implementation of [TelegramLoginPlatform].
 class MethodChannelTelegramLogin extends TelegramLoginPlatform {
   @visibleForTesting
-  final methodChannel = const MethodChannel('telegram_login_flutter');
+  final methodChannel = const MethodChannel('telegram_login');
 
   bool _isConfigured = false;
 

@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint telegram_login_flutter.podspec` to validate before publishing.
+# Run `pod lib lint telegram_login.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'telegram_login_flutter'
+  s.name             = 'telegram_login'
   s.version          = '0.0.1'
   s.summary          = 'Telegram Login SDK for Flutter (iOS)'
   s.description      = <<-DESC
@@ -13,7 +13,7 @@ A Flutter plugin that provides Telegram Login functionality on iOS using the off
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Telegram' => 'support@telegram.org' }
   s.source           = { :path => '.' }
-  s.source_files = 'telegram_login_flutter/Sources/telegram_login_flutter/**/*'
+  s.source_files = 'telegram_login/Sources/telegram_login/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '15.0'
 
@@ -25,5 +25,5 @@ A Flutter plugin that provides Telegram Login functionality on iOS using the off
   # required reason APIs, update the PrivacyInfo.xcprivacy file to describe your
   # plugin's privacy impact, and then uncomment this line. For more information,
   # see https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
-  # s.resource_bundles = {'telegram_login_flutter_privacy' => ['telegram_login_flutter/Sources/telegram_login_flutter/PrivacyInfo.xcprivacy']}
+  # s.resource_bundles = {'telegram_login_privacy' => ['telegram_login/Sources/telegram_login/PrivacyInfo.xcprivacy']}
 end

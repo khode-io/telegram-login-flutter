@@ -1,1 +1,1 @@
-rootProject.name = 'telegram_login_flutter'
+rootProject.name = 'telegram_login'

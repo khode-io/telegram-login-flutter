@@ -1,4 +1,4 @@
-package io.khode.telegram_login_flutter
+package io.khode.telegram_login
 
 import android.app.Activity
 import android.content.Intent
@@ -24,10 +24,10 @@ import java.net.UnknownHostException
  * Android counterpart of the Flutter Telegram Login plugin.
  *
  * Bridges the [TelegramLogin] singleton from `org.telegram:login-sdk` to the
- * shared `telegram_login_flutter` method channel, mirroring the iOS plugin's
+ * shared `telegram_login` method channel, mirroring the iOS plugin's
  * `configure` / `login` / `cancelLogin` / `handleUrl` surface and error codes.
  */
-class TelegramLoginFlutterPlugin :
+class TelegramLoginPlugin :
     FlutterPlugin,
     MethodCallHandler,
     ActivityAware,
@@ -44,7 +44,7 @@ class TelegramLoginFlutterPlugin :
     private var redirectUri: String? = null
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "telegram_login_flutter")
+        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "telegram_login")
         channel.setMethodCallHandler(this)
     }
 
@@ -241,7 +241,7 @@ class TelegramLoginFlutterPlugin :
         /**
          * Map an Android SDK [LoginError.message] to the iOS-compatible
          * (code, message) pair consumed by the Dart layer's error mapping in
-         * `telegram_login_flutter_method_channel.dart`.
+         * `telegram_login_method_channel.dart`.
          */
         internal fun mapError(message: String?): Pair<String, String> {
             val raw = message?.trim().orEmpty()

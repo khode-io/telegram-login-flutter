@@ -1,4 +1,4 @@
-group = "io.khode.telegram_login_flutter"
+group = "io.khode.telegram_login"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -34,7 +34,7 @@ plugins {
 }
 
 android {
-    namespace = "io.khode.telegram_login_flutter"
+    namespace = "io.khode.telegram_login"
 
     compileSdk = 36
 

@@ -36,10 +36,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: io.khode.telegram_login_flutter
-        pluginClass: TelegramLoginFlutterPlugin
+        package: io.khode.telegram_login
+        pluginClass: TelegramLoginPlugin
       ios:
-        pluginClass: TelegramLoginFlutterPlugin
+        pluginClass: TelegramLoginPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

@@ -14,7 +14,7 @@ import TelegramLogin
 /// The plugin supports both classic `UIApplicationDelegate` apps and modern
 /// scene-based apps (iOS 13+). URL callbacks are automatically forwarded to
 /// the Telegram SDK for processing.
-public class TelegramLoginFlutterPlugin: NSObject, FlutterPlugin {
+public class TelegramLoginPlugin: NSObject, FlutterPlugin {
 
     /// Indicates whether the Telegram Login SDK has been configured with
     /// valid client credentials. Required before calling `login()`.
@@ -34,10 +34,10 @@ public class TelegramLoginFlutterPlugin: NSObject, FlutterPlugin {
     ///   method channels and application delegates.
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(
-            name: "telegram_login_flutter",
+            name: "telegram_login",
             binaryMessenger: registrar.messenger()
         )
-        let instance = TelegramLoginFlutterPlugin()
+        let instance = TelegramLoginPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
         registrar.addApplicationDelegate(instance)
         if #available(iOS 13.0, *) {
@@ -333,7 +333,7 @@ public class TelegramLoginFlutterPlugin: NSObject, FlutterPlugin {
 // (iOS 13+). They handle URL callbacks in modern scene-based apps.
 
 @available(iOS 13.0, *)
-extension TelegramLoginFlutterPlugin: FlutterSceneLifeCycleDelegate {
+extension TelegramLoginPlugin: FlutterSceneLifeCycleDelegate {
 
     /// Handles URL open requests in a scene-based app.
     ///
