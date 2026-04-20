@@ -51,14 +51,14 @@ requires authentication to download.
 
 #### 2. Configure Gradle credentials
 
-Create or edit `android/key.properties` in your app:
+Create or edit `~/.gradle/gradle.properties` in your home directory:
 
 ```properties
 gpr.user=YOUR_GITHUB_USERNAME
 gpr.key=YOUR_GITHUB_PERSONAL_ACCESS_TOKEN
 ```
 
-> **Note:** This file should NOT be committed to version control. Add it to `.gitignore`.
+> **Note:** This file is in your home directory (`~/.gradle/gradle.properties`), not in your project. This keeps credentials out of your project and version control.
 
 Alternatively, you can use environment variables:
 

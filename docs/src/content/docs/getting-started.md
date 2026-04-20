@@ -37,15 +37,15 @@ The Telegram Login SDK for Android is hosted on GitHub Package Registry and requ
 
 #### 2. Configure Gradle credentials
 
-Create or edit `android/key.properties` in your Flutter app:
+Create or edit `~/.gradle/gradle.properties` in your home directory:
 
 ```properties
 gpr.user=YOUR_GITHUB_USERNAME
 gpr.key=YOUR_GITHUB_PERSONAL_ACCESS_TOKEN
 ```
 
-:::caution
-Add `android/key.properties` to your `.gitignore` to avoid committing credentials.
+:::tip
+This file is in your home directory (`~/.gradle/gradle.properties`), not in your project. This keeps credentials out of your project directory and version control entirely.
 :::
 
 Alternatively, use environment variables:
