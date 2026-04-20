@@ -1,6 +1,6 @@
 name: telegram_login
 description: "Flutter plugin for Telegram Login, enabling passwordless OAuth authentication with native SDK integration for iOS and Android."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/khode-io/telegram-login-flutter
 
 environment:

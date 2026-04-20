@@ -1,3 +1,9 @@
+## 1.0.1
+
+- Fixed documentation to reflect correct Android minimum SDK (API 23, Android 6.0+)
+- Enhanced pubspec.yaml description for pub.dev compliance
+- Updated Android SDK source link in documentation
+
 ## 1.0.0
 
 - Initial stable release of telegram_login.
@@ -14,4 +20,3 @@
   - `TelegramLogin.cancelLogin()` - Cancel an in-flight login
   - `TelegramLogin.handleUrl()` - Manual URL forwarding for custom deep link handlers
   - `TelegramLogin.isConfigured` - Check if SDK is configured
-
