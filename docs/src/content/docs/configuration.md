@@ -52,11 +52,14 @@ const TelegramLoginConfiguration(
 
 ## Available Scopes
 
-The following OAuth scopes can be requested:
+You can request specific permissions when initiating authorization. The `openid` scope is required.
 
-| Scope     | Description                                                          |
-| --------- | -------------------------------------------------------------------- |
-| `profile` | Access to user's basic profile information (name, username, avatar). |
+| Scope                 | Description                                                        | Claims Returned                         |
+| --------------------- | ------------------------------------------------------------------ | --------------------------------------- |
+| `openid`              | Required. Returns the user's unique identifier and auth timestamp. | `sub`, `iss`, `iat`, `exp`              |
+| `profile`             | User's basic info: name, username, and profile photo URL.          | `name`, `preferred_username`, `picture` |
+| `phone`               | User's verified phone number. Requires user consent.               | `phone_number`                          |
+| `telegram:bot_access` | Allows your bot to send direct messages to the user after login.   | —                                       |
 
 ## Platform-Specific Considerations
 
