@@ -22,38 +22,7 @@ dependencies:
 Then run `flutter pub get`.
 
 - **iOS:** On first build, CocoaPods / SwiftPM will resolve the underlying `telegram-login-ios` SDK automatically.
-- **Android:** The Gradle build will pull the Telegram Login SDK from GitHub Package Registry.
-
-### Android Authentication Setup
-
-The Telegram Login SDK for Android is hosted on GitHub Package Registry and requires authentication.
-
-#### 1. Create a GitHub Personal Access Token
-
-1. Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Click **Generate new token (classic)**
-3. Select the `read:packages` scope
-4. Generate and copy the token
-
-#### 2. Configure Gradle credentials
-
-Create or edit `~/.gradle/gradle.properties` in your home directory:
-
-```properties
-gpr.user=YOUR_GITHUB_USERNAME
-gpr.key=YOUR_GITHUB_PERSONAL_ACCESS_TOKEN
-```
-
-:::tip
-This file is in your home directory (`~/.gradle/gradle.properties`), not in your project. This keeps credentials out of your project directory and version control entirely.
-:::
-
-Alternatively, use environment variables:
-
-```bash
-export GITHUB_USERNAME=your_username
-export GITHUB_TOKEN=your_token
-```
+- **Android:** The Telegram Login SDK is automatically downloaded from Maven Central. No additional setup required.
 
 ## Setup
 
