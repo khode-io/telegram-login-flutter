@@ -1,3 +1,13 @@
+## 1.1.0
+
+- **Breaking Change:** Android SDK dependency changed from GitHub Packages to Maven Central
+  - Users no longer need to configure GitHub authentication
+  - No more `gpr.user` or `gpr.key` required in `~/.gradle/gradle.properties`
+  - No repository configuration needed in app's `android/settings.gradle`
+- Enhanced dartdoc coverage for all public API elements
+- Added `example` symlink for pub.dev compliance
+- Fixed pubspec.yaml description for better pub.dev score
+
 ## 1.0.1
 
 - Fixed documentation to reflect correct Android minimum SDK (API 23, Android 6.0+)

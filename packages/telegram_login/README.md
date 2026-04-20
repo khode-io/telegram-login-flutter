@@ -1,10 +1,10 @@
 A Flutter plugin that wraps the official Telegram Login SDK and exposes a Dart
 API for signing users in with their Telegram account.
 
-| Platform | SDK Source                                                                                              |
-| -------- | ------------------------------------------------------------------------------------------------------- |
-| iOS      | [TelegramMessenger/telegram-login-ios](https://github.com/TelegramMessenger/telegram-login-ios)         |
-| Android  | [TelegramMessenger/telegram-login-android](https://github.com/TelegramMessenger/telegram-login-android) |
+| Platform | SDK Source                                                                                                        |
+| -------- | ----------------------------------------------------------------------------------------------------------------- |
+| iOS      | [TelegramMessenger/telegram-login-ios](https://github.com/TelegramMessenger/telegram-login-ios)                   |
+| Android  | [io.khode:telegram-login-sdk on Maven Central](https://central.sonatype.com/artifact/io.khode/telegram-login-sdk) |
 
 ## Features
 
@@ -27,7 +27,7 @@ Add the package to your app's `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  telegram_login: ^1.0.1
+  telegram_login: ^1.1.0
 ```
 
 Then run `flutter pub get`.
