@@ -6,7 +6,7 @@ description: Install and set up the Telegram Login Flutter plugin.
 ## Prerequisites
 
 - **iOS:** 15.0 or newer, Xcode 15 or newer
-- **Android:** API 21+ (Android 5.0+)
+- **Android:** API 23+ (Android 6.0+)
 - Flutter `>=3.3.0`, Dart SDK `^3.6.0`
 - A registered Telegram bot via [@BotFather](https://t.me/botfather)
 
