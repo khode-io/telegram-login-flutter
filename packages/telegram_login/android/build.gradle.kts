@@ -18,13 +18,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url = uri("https://maven.pkg.github.com/TelegramMessenger/telegram-login-android")
-            credentials {
-                username = (findProperty("gpr.user") as String?) ?: System.getenv("GITHUB_USERNAME")
-                password = (findProperty("gpr.key") as String?) ?: System.getenv("GITHUB_TOKEN")
-            }
-        }
     }
 }
 
@@ -78,7 +71,7 @@ android {
 }
 
 dependencies {
-    implementation("org.telegram:login-sdk:1.0.0")
+    implementation("io.khode:telegram-login-sdk:1.0.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.mockito:mockito-core:5.0.0")
 }

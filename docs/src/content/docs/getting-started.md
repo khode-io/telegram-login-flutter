@@ -16,13 +16,13 @@ Add the package to your app's `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  telegram_login: ^1.0.1
+  telegram_login: ^1.1.0
 ```
 
 Then run `flutter pub get`.
 
 - **iOS:** On first build, CocoaPods / SwiftPM will resolve the underlying `telegram-login-ios` SDK automatically.
-- **Android:** The Gradle build will pull the Telegram Login SDK.
+- **Android:** The Telegram Login SDK is automatically downloaded from Maven Central. No additional setup required.
 
 ## Setup
 
