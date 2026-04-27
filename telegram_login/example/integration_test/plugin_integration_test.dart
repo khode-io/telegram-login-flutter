@@ -8,17 +8,15 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-
 import 'package:telegram_login/telegram_login.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('getPlatformVersion test', (WidgetTester tester) async {
+  testWidgets('TelegramLogin is not configured initially', (
+    WidgetTester tester,
+  ) async {
     final TelegramLogin plugin = TelegramLogin();
-    final String? version = await plugin.getPlatformVersion();
-    // The version string depends on the host platform running the test, so
-    // just assert that some non-empty string is returned.
-    expect(version?.isNotEmpty, true);
+    expect(plugin.isConfigured, false);
   });
 }
