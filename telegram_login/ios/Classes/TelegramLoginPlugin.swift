@@ -10,9 +10,8 @@ import UIKit
 /// - Receiving and processing callback URLs from Telegram
 /// - Delivering login results or errors back to Dart
 ///
-/// The plugin supports both classic `UIApplicationDelegate` apps and modern
-/// scene-based apps (iOS 13+). URL callbacks are automatically forwarded to
-/// the Telegram SDK for processing.
+/// URL callbacks from the app delegate are automatically forwarded to the
+/// Telegram SDK for processing.
 public class TelegramLoginPlugin: NSObject, FlutterPlugin {
 
     /// Indicates whether the Telegram Login SDK has been configured with
@@ -27,7 +26,7 @@ public class TelegramLoginPlugin: NSObject, FlutterPlugin {
     /// Registers the plugin with the Flutter engine.
     ///
     /// Creates the method channel, initializes the plugin instance, and
-    /// registers for application/scene delegate callbacks to handle URL opens.
+    /// registers for application delegate callbacks to handle URL opens.
     ///
     /// - Parameter registrar: The Flutter plugin registrar for registering
     ///   method channels and application delegates.
@@ -39,9 +38,6 @@ public class TelegramLoginPlugin: NSObject, FlutterPlugin {
         let instance = TelegramLoginPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
         registrar.addApplicationDelegate(instance)
-        if #available(iOS 13.0, *) {
-            registrar.addSceneDelegate(instance)
-        }
     }
 
     /// Handles incoming method calls from the Dart side.
@@ -316,55 +312,6 @@ public class TelegramLoginPlugin: NSObject, FlutterPlugin {
         continue userActivity: NSUserActivity,
         restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
     ) -> Bool {
-        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-              let url = userActivity.webpageURL else {
-            return false
-        }
-        DispatchQueue.main.async { [weak self] in
-            self?.forwardUrl(url)
-        }
-        return true
-    }
-}
-
-// MARK: - FlutterSceneLifeCycleDelegate (scene-based apps, iOS 13+)
-//
-// These methods are called by Flutter for apps using the UIScene lifecycle
-// (iOS 13+). They handle URL callbacks in modern scene-based apps.
-
-@available(iOS 13.0, *)
-extension TelegramLoginPlugin: FlutterSceneLifeCycleDelegate {
-
-    /// Handles URL open requests in a scene-based app.
-    ///
-    /// Called when the app receives a URL through a custom scheme
-    /// (e.g., `tglogin://callback`). Extracts the first URL from the
-    /// context set and forwards it to the Telegram SDK.
-    ///
-    /// - Parameters:
-    ///   - scene: The UIScene that received the URL
-    ///   - URLContexts: A set of UIOpenURLContext objects containing URLs
-    /// - Returns: `true` if a URL was handled, `false` otherwise
-    public func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) -> Bool {
-        guard let url = URLContexts.first?.url else { return false }
-        DispatchQueue.main.async { [weak self] in
-            self?.forwardUrl(url)
-        }
-        return true
-    }
-
-    /// Handles universal link continuations in a scene-based app.
-    ///
-    /// Called when the app is opened via a universal link during a scene
-    /// transition. Checks if the activity is a web browsing activity and
-    /// forwards the URL to the Telegram SDK for OAuth callback processing.
-    ///
-    /// - Parameters:
-    ///   - scene: The UIScene that received the activity
-    ///   - userActivity: The NSUserActivity containing the web URL
-    /// - Returns: `true` if the URL was handled (was a web browsing URL),
-    ///   `false` otherwise
-    public func scene(_ scene: UIScene, continue userActivity: NSUserActivity) -> Bool {
         guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
               let url = userActivity.webpageURL else {
             return false
