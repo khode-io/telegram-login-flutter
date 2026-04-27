@@ -1,3 +1,10 @@
+## 1.2.1
+
+- Fix iOS compilation error for consumers on older Flutter SDK versions
+  - Removed `FlutterSceneLifeCycleDelegate` conformance and `addSceneDelegate` call
+  - These APIs are not available on Flutter versions below 3.16+
+  - `addApplicationDelegate` alone is sufficient; Flutter's engine forwards scene delegate URL events to registered application delegates automatically
+
 ## 1.2.0
 
 - iOS implementation is now self-contained and no longer depends on the external `telegram-login-ios` Swift package
