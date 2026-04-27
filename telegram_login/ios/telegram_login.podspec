@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'telegram_login'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'Telegram Login SDK for Flutter (iOS)'
   s.description      = <<-DESC
 A Flutter plugin that provides Telegram Login functionality on iOS using ASWebAuthenticationSession and CryptoKit.
