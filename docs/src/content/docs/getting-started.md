@@ -16,7 +16,7 @@ Add the package to your app's `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  telegram_login: ^1.1.0
+  telegram_login: ^1.2.0
 ```
 
 Then run `flutter pub get`.
